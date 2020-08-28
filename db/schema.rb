@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_12_041750) do
+ActiveRecord::Schema.define(version: 2020_08_15_234629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_08_12_041750) do
   end
 
   create_table "patients", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
     t.integer "age"
     t.string "email"
     t.string "gender"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2020_08_12_041750) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
     t.float "weight"
+    t.string "last_name"
   end
 
   create_table "vital_signals", force: :cascade do |t|

@@ -1,5 +1,5 @@
 class PatientSerializer < ActiveModel::Serializer
-  attributes :id, :authentication_token, :name, :email, :gender, :age, :phone, :height, :weight, :diagnosis, :avatar
+  attributes :id, :authentication_token, :first_name, :last_name, :email, :gender, :age, :phone, :height, :weight, :diagnosis, :avatar
 
   has_many :vital_signals, serializer: VitalSignalSerializer
 

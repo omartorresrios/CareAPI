@@ -1,6 +1,6 @@
 class PatientsController < ApplicationController
   before_action :set_patient
-  before_action :authenticate_patient!
+  before_action :authenticate_user!
 
   def get_patient_info
     @patient = Patient.find_by(id: params[:id])

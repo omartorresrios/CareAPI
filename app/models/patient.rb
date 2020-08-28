@@ -8,14 +8,15 @@ class Patient < ApplicationRecord
 
   EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
-  validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: EMAIL_REGEX }
-  validates :name, presence: true
+  validates :email, presence: true, uniqueness: { case_sensitive: false }#, format: { with: EMAIL_REGEX }
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 
   def self.authenticate(email_or_name, password)
     patient = Patient.find_by(email: email_or_name)
     patient && patient.authenticate(password)
   end
-
+  
   def generate_auth_token(uid)
     begin
       now_seconds = Time.now.to_i
@@ -26,7 +27,7 @@ class Patient < ApplicationRecord
           :sub => credentials["client_email"],
           :aud => 'https://identitytoolkit.googleapis.com/google.identity.identitytoolkit.v1.IdentityToolkit',
           :iat => now_seconds,
-          :exp => now_seconds+(60*60), # Maximum expiration time is one hour
+          :exp => now_seconds+(60*60),
           :uid => uid.to_s,
           :claims => {:premium_account => true}
         }

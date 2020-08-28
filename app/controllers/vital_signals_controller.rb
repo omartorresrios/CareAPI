@@ -1,5 +1,5 @@
 class VitalSignalsController < ApplicationController
-  before_action :authenticate_patient!
+  before_action :authenticate_user!
 
   def new
     vital_signal = VitalSignal.new
@@ -17,7 +17,7 @@ class VitalSignalsController < ApplicationController
   private
 
   def vital_signal_params
-    params.require(:vital_signal).permit(:respiratory_rate, :heart_rate, :temperature, :diastolic_pressure, :systolic_pressure)
+    params.permit(:respiratory_rate, :heart_rate, :temperature, :diastolic_pressure, :systolic_pressure)
   end
 
 end

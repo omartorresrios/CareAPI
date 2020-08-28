@@ -10,7 +10,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 
-gem 'jwt', '~> 1.5', '>= 1.5.4'
+gem 'jwt'
 gem 'active_model_serializers', '~> 0.10.2'
 gem 'rack-cors', require: 'rack/cors'
 
