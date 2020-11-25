@@ -10,7 +10,7 @@ class ApplicationController < ActionController::API
     credentials = JSON.parse(File.read("config/secrets/firebase-adminsdk-care-project.json"))
     project_id = credentials["project_id"]
 
-    certificate = "-----BEGIN CERTIFICATE-----\nMIIDHDCCAgSgAwIBAgIIKk3UhQWWaS8wDQYJKoZIhvcNAQEFBQAwMTEvMC0GA1UE\nAxMmc2VjdXJldG9rZW4uc3lzdGVtLmdzZXJ2aWNlYWNjb3VudC5jb20wHhcNMjAw\nODI1MDkyMDA0WhcNMjAwOTEwMjEzNTA0WjAxMS8wLQYDVQQDEyZzZWN1cmV0b2tl\nbi5zeXN0ZW0uZ3NlcnZpY2VhY2NvdW50LmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBALddEZuX1YD4v7c++8giOIYljwv2jwNRH76OPoh6HNGwXVZC\nX+UONE4GB37RRvWHcVbZL5OgPRkfARcpziI2hGwpjPZD4mRR1TTbXEk1stv98G6n\nEY3y6lVZD/nNIO17sSKe+D4dXvGvUJ3Q/w3UQ3Jd/FgrhljYcjAR850pAskoGBCa\neOy43/KP1+u2hvbjY1SVXdtYu4scLTrAbDsSLR56XM74Ly8Co+GS8915HlqcTgwe\nEnFeMlDSD0eYz3v1Vy2sOmUjaCxtiS1jf3vbGPe0fyytj5arJdkON+BoeXmPnD9S\n4o0JzygIymp/QFaOeX4wq85sfqsoX/qH/erKVd0CAwEAAaM4MDYwDAYDVR0TAQH/\nBAIwADAOBgNVHQ8BAf8EBAMCB4AwFgYDVR0lAQH/BAwwCgYIKwYBBQUHAwIwDQYJ\nKoZIhvcNAQEFBQADggEBAKvmhz6zBCelDEkqQSvGI6rAMLD2SRDUPcJC799TD5ms\n34vLKWnqo0QaCYv6vNDMUQjyhhRFUDLx1ZQElqSYLadweZhSbyk9SlzsyOFNEwWN\nz8SfeUEDWGCJYXfP4d5vNPGFUy82e6N0C6ywyIQ9gW1Cy+R2fp5oF0ap1NQv1lBu\n/X2aA/LOQJrnBUZ8Rm0FJR4pSu6vT5ewMZOiIKc9khk1yKeSgS8rLSuebveRi+AZ\nRAFwMvHUUqbbjorqJvAkx8ue9iaKAluGSXUcZBhrqSsK4/2gFxnDybL9fMQ348Og\nH2bG5b5L6kHcv1BNRHHkcQw44AFnsnRFWCJ4kyb2Q/o=\n-----END CERTIFICATE-----\n"
+    certificate = "-----BEGIN CERTIFICATE-----\nMIIDHDCCAgSgAwIBAgIIZ4JZYuYpBOwwDQYJKoZIhvcNAQEFBQAwMTEvMC0GA1UE\nAxMmc2VjdXJldG9rZW4uc3lzdGVtLmdzZXJ2aWNlYWNjb3VudC5jb20wHhcNMjAx\nMTEzMDkyMDA5WhcNMjAxMTI5MjEzNTA5WjAxMS8wLQYDVQQDEyZzZWN1cmV0b2tl\nbi5zeXN0ZW0uZ3NlcnZpY2VhY2NvdW50LmNvbTCCASIwDQYJKoZIhvcNAQEBBQAD\nggEPADCCAQoCggEBAMqK3yPzqS4AupXNflI8NcSPYkEAGLdCZwnaAjhhlW3PeWKt\nqQVxb6z11RzxOlbNYNqP7GseNKuR4Vko3AiVSzhopOkuFpmQ0Y1c95vPQI++iOWg\n9PM2QVggGuhtG356ptPyUy1D0qiVqCP9alf0e5isSLYKNVZwiOEaV9favVRnzgJf\nCMUIg+ebhlYVxq3C4cfIHBRwhHT+ZlWI+XmYR7dXYHedeG0DIMUqHfZhzo87sMYQ\nMJ1GZuDmZ15D8vGcovJpHgoVxT0uxXx4mQ8R4HsZpGX1nHbMGCvhrpJ3cP5U0p7H\nrud84bAmjFJ/vOCrBk1vddlbR3AbnFgFPLbd3q8CAwEAAaM4MDYwDAYDVR0TAQH/\nBAIwADAOBgNVHQ8BAf8EBAMCB4AwFgYDVR0lAQH/BAwwCgYIKwYBBQUHAwIwDQYJ\nKoZIhvcNAQEFBQADggEBAEZ1Y6g8zW0avXZeiDtCZ7/hPZrPCHz0wiLkhKFGj3Rb\nWCDw8HW3Ku4zf5Ut4kpY10fg1pyp54vftx25M3uIYPALc8xJvNebJKNVe2TCU4qG\nzGHQ2AsYWLprmB1+9k/DADZlLN5USr78Iy2u7DCaJLgy324h9VOf8EK5edA1RnY6\niJRGlJN6XMeLXrfTjYUHYQAxp/iFePGNnovrIf+TVCNhZm4efzuXe7pEftlwJNT6\nZ9yaVdyxAoHw6hWphC0XsVZEw1x3TKX3VYLAFXE46gPoM2lVLeZOh3HsPt+0LYwt\njlijPVOZH+xah/k3Y/UCdlrq44IEmToW9x2as+6mVZw=\n-----END CERTIFICATE-----\n"
     cert = OpenSSL::X509::Certificate.new(certificate)
 
     decode(http_token, cert.public_key, project_id) || render_unauthorized
@@ -24,8 +24,6 @@ class ApplicationController < ActionController::API
   # end
 
   def decode(id_token, public_key, project_id)
-
-
     decoded_token, error = decode_jwt_token(id_token, project_id, nil)
     unless error.nil?
       raise error
@@ -48,7 +46,7 @@ class ApplicationController < ActionController::API
 
     valid_public_keys = retrieve_and_cache_jwt_valid_public_keys
     kid = headers['kid']
-
+    logger.debug "kid: #{kid}"
     unless valid_public_keys.keys.include?(kid)
       raise "Invalid access token 'kid' header, do not correspond to valid public keys."
     end
@@ -117,7 +115,7 @@ class ApplicationController < ActionController::API
       # Handle Signature verification fail
       return nil, "Invalid access token. Signature verification failed."
     end
-
+    logger.debug "decoded_token: #{decoded_token}"
     return decoded_token, nil
   end
 

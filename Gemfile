@@ -26,6 +26,8 @@ gem 'pry', '~> 0.12.2'
 
 gem 'rack-cors', require: 'rack/cors'
 
+gem 'groupdate'
+
 # image resizing
 gem 'mini_magick'
 

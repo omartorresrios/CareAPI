@@ -7,6 +7,17 @@ class PatientsController < ApplicationController
     render json: @patient, serializer: PatientSerializer, status: 201
   end
 
+  def get_doctors
+    @doctors = Doctor.all
+    render json: @doctors, status: 200
+  end
+
+  def assign_patient_to_doctor
+    @doctor = Doctor.find_by(id: params[:doctor_id])
+    @patient = Patient.find_by(id: params[:id])
+    @doctor.patients << @patient
+  end
+
   private
 
     def set_patient
