@@ -11,6 +11,8 @@ class Patient < ApplicationRecord
   validates :email, presence: true, uniqueness: { case_sensitive: false }#, format: { with: EMAIL_REGEX }
   validates :first_name, presence: true
   validates :last_name, presence: true
+  validates :gender, presence: { message: "Debes indicar tu género" }
+  validates :age, presence: { message: "Debes colocar tu fecha de nacimiento" }
 
   mount_uploader :avatar, AvatarUploader
 
@@ -25,13 +27,7 @@ class Patient < ApplicationRecord
   end
 
   def signals_by_month
-    by_month = vital_signals.group_by { |signal| signal.created_at.strftime("%B") }
-
-    by_month.each do |month, values|
-      ajaa = values.group_by { |signal| signal.created_at.strftime("%D") }
-      logger.debug "ajaa: #{ajaa}"
-      ajaa
-    end
+    vital_signals.group_by { |vital_signal| vital_signal.created_at.strftime("%B") }
   end
 
   # def decode_avatar_data

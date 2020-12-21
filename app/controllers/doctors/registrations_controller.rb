@@ -3,7 +3,7 @@ class Doctors::RegistrationsController < ApplicationController
 
     doctor = Doctor.new(doctor_params)
     if doctor.save
-      render json: doctor, serializer: DoctorSerializer, status: 201
+      render json: doctor, serializer: NewDoctorSerializer, status: 201
     else
       render json: { errors: doctor.errors.full_messages }, status: 422
     end
