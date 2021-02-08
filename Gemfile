@@ -17,7 +17,7 @@ gem 'rack-cors', require: 'rack/cors'
 gem 'carrierwave-base64'
 
 # image uploads to Amazon S3
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'fog', '~> 1.38'
 
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
